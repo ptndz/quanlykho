@@ -21,56 +21,79 @@ namespace doanC
         }
         public MySqlCommand INSERT(string sql, JObject data)
         {
-
-            this.Open();
-            MySqlCommand cmd = new MySqlCommand(sql, conn);
-
-            foreach (var item in data)
+            try
             {
-                cmd.Parameters.AddWithValue("@" + item.Key, item.Value);
+                this.Open();
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+                foreach (var item in data)
+                {
+                    cmd.Parameters.AddWithValue("@" + item.Key, item.Value);
+                }
+                cmd.ExecuteNonQuery();
+                this.Close();
+                return cmd;
             }
-            cmd.ExecuteNonQuery();
-            this.Close();
-            return cmd;
+            catch (Exception e)
+            {
+                return null;
+            }
+
 
         }
         public JArray SELECT(string sql, string[] name)
         {
-            JArray array = new JArray();
-            MySqlCommand cmd = new MySqlCommand(sql, conn);
-            this.Open();
-            MySqlDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
-            {
-                JObject obj = new JObject();
-                foreach (string i in name)
+            try {
+                JArray array = new JArray();
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                this.Open();
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
                 {
-                    obj[i] = reader[i].ToString();
+                    JObject obj = new JObject();
+                    foreach (string i in name)
+                    {
+                        obj[i] = reader[i].ToString();
+                    }
+                    array.Add(obj);
                 }
-                array.Add(obj);
+                this.Close();
+                return array;
             }
-            this.Close();
-            return array;
+            catch (Exception e)
+            {
+                return null;
+            }
+
+
         }
         public JObject WHERE(string sql, string[] name, JObject value)
         {
-            JObject obj = new JObject();
-            MySqlCommand cmd = new MySqlCommand(sql, conn);
-            foreach (var item in value)
-            {
-                cmd.Parameters.AddWithValue("@" + item.Key, item.Value);
-            }
-            this.Open();
-            MySqlDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
-            {
-                foreach (string i in name)
+            try{
+                JObject obj = new JObject();
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                foreach (var item in value)
                 {
-                    obj[i] = reader[i].ToString();
+                    cmd.Parameters.AddWithValue("@" + item.Key, item.Value);
                 }
+                this.Open();
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    foreach (string i in name)
+                    {
+                        obj[i] = reader[i].ToString();
+                    }
+                }
+                this.Close();
+                return obj;
             }
-            this.Close();
-            return obj;
+            catch (Exception e)
+            {
+                return null;
+            }
+
+            
         }
         public void Open()
         {

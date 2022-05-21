@@ -53,9 +53,17 @@ namespace doanC.Screen
         }
         void loadData()
         {
-            JArray myList = ClassIndex.donvido.GetDovido();
-            dataGridView1.DataSource = myList;
-            new sizeDGV(dataGridView1);
+            try
+            {
+                dynamic myList = ClassIndex.donvido.GetDovido();
+                dataGridView1.DataSource = myList;
+                new sizeDGV(dataGridView1);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
