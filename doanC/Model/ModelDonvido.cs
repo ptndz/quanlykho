@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace doanC.Model
+﻿namespace doanC.Model
 {
-     class ModelDonvido
+    class ModelDonvido
     {
         public int id;
         public string name;
         public ModelDonvido()
         {
-            
+
         }
         public ModelDonvido(int id, string name)
         {
@@ -31,7 +25,7 @@ namespace doanC.Model
         }
         public string GetString()
         {
-            return string.Format("{0},{1}",id, name);
+            return string.Format("{0},{1}", id, name);
         }
     }
 }

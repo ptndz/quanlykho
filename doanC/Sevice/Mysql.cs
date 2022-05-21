@@ -14,12 +14,12 @@ namespace doanC
 
         private string connectionString = "SERVER=" + server + ";" + "DATABASE=" + database + ";" + "UID=" + user + ";" + "PASSWORD=" + pass + ";";
         protected MySqlConnection conn;
-       
+
         public Mysql()
         {
             conn = new MySqlConnection(connectionString);
         }
-        public MySqlCommand INSERT(string sql, JObject data )
+        public MySqlCommand INSERT(string sql, JObject data)
         {
 
             this.Open();
@@ -45,12 +45,32 @@ namespace doanC
                 JObject obj = new JObject();
                 foreach (string i in name)
                 {
-                    obj[i] = reader[i].ToString();         
+                    obj[i] = reader[i].ToString();
                 }
                 array.Add(obj);
             }
             this.Close();
             return array;
+        }
+        public JObject WHERE(string sql, string[] name, JObject value)
+        {
+            JObject obj = new JObject();
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            foreach (var item in value)
+            {
+                cmd.Parameters.AddWithValue("@" + item.Key, item.Value);
+            }
+            this.Open();
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                foreach (string i in name)
+                {
+                    obj[i] = reader[i].ToString();
+                }
+            }
+            this.Close();
+            return obj;
         }
         public void Open()
         {
@@ -64,7 +84,7 @@ namespace doanC
             }
         }
         public void Close()
-        { 
+        {
             try
             {
                 conn.Close();

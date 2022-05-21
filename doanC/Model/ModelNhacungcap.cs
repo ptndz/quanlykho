@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace doanC.Model
+﻿namespace doanC.Model
 {
     class ModelNhacungcap
     {
@@ -19,7 +13,7 @@ namespace doanC.Model
         public ModelNhacungcap()
         {
         }
-        public ModelNhacungcap(int id, string name, string address, string phone, string email, string note,string date)
+        public ModelNhacungcap(int id, string name, string address, string phone, string email, string note, string date)
         {
             this.id = id;
             this.name = name;
@@ -36,7 +30,7 @@ namespace doanC.Model
         public string Email { get => email; set => email = value; }
         public string Note { get => note; set => note = value; }
         public string Date { get => date; set => date = value; }
-        
+
         public string GetString()
         {
             return string.Format("{0}|{1}|{2}|{3}|{4}|{5}|{6}", id, name, address, phone, email, note, date);
