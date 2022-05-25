@@ -55,7 +55,7 @@ namespace doanC.Screen
         {
             try
             {
-                dynamic myList = ClassIndex.donvido.GetDovido();
+                JArray myList = ClassIndex.donvido.GetDovido();
                 dataGridView1.DataSource = myList;
                 new sizeDGV(dataGridView1);
             }

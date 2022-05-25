@@ -11,7 +11,7 @@ namespace doanC.Sevice
         {
             try
             {
-                string sql = "INSERT INTO Unit(DisplayName) VALUES(@tenDonViDo)";
+                string sql = "INSERT INTO `Unit`(DisplayName) VALUES(@tenDonViDo)";
                 JObject o = new JObject();
                 o["tenDonViDo"] = tenDonViDo;
                 mysql.INSERT(sql, o);
@@ -64,8 +64,9 @@ namespace doanC.Sevice
                 string[] name = { "DisplayName" };
                 JObject o = new JObject();
                 o["id"] = id;
-                JObject data = mysql.WHERE(sql, name, o);
-                return data;
+                JArray data = mysql.WHERE(sql, name, o);
+
+                return (JObject)data[0];
             }
             catch (Exception)
             {

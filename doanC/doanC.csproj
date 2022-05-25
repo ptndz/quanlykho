@@ -194,6 +194,7 @@
     </Compile>
     <Compile Include="Sevice\ClassIndex.cs" />
     <Compile Include="Sevice\ClassDonvido.cs" />
+    <Compile Include="Sevice\ClassKhachhang.cs" />
     <Compile Include="Sevice\ClassNhacungcap.cs" />
     <Compile Include="Sevice\Mysql.cs" />
     <Compile Include="Program.cs" />
@@ -233,6 +234,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screen\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screen\Khachhang.resx">
+      <DependentUpon>Khachhang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screen\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

@@ -13,40 +13,85 @@ namespace doanC.Component
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Nhapkho nhapkho = new Nhapkho();
-            nhapkho.ShowDialog();
+            try
+            {
+                Nhapkho nhapkho = new Nhapkho();
+                nhapkho.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Xuatkho xuatkho = new Xuatkho();
-            xuatkho.ShowDialog();
+            try
+            {
+                Xuatkho xuatkho = new Xuatkho();
+                xuatkho.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+
 
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Vattu vattu = new Vattu();
-            vattu.ShowDialog();
+            try
+            {
+                Vattu vattu = new Vattu();
+                vattu.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
 
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Donvido donvido = new Donvido();
-            donvido.ShowDialog();
+            try
+            {
+                Donvido donvido = new Donvido();
+                donvido.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Nhacungcap nhacungcap = new Nhacungcap();
-            nhacungcap.ShowDialog();
+            try
+            {
+                Nhacungcap nhacungcap = new Nhacungcap();
+                nhacungcap.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+      
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            Khachhang khachhang = new Khachhang();
-            khachhang.ShowDialog();
+            try
+            {
+                Khachhang khachhang = new Khachhang();
+                khachhang.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
         }
     }
 }

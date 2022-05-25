@@ -8,5 +8,10 @@ namespace doanC.Screen
         {
             InitializeComponent();
         }
+
+        private void Khachhang_Load(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }

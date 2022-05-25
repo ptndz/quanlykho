@@ -48,7 +48,8 @@
             this.MinimizeBox = false;
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Home";
+            this.Text = "Quản lý kho";
+            this.Load += new System.EventHandler(this.Home_Load);
             this.ResumeLayout(false);
 
         }

@@ -8,5 +8,10 @@ namespace doanC.Screen
         {
             InitializeComponent();
         }
+
+        private void Home_Load(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }

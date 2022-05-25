@@ -19,7 +19,7 @@ namespace doanC
         {
             conn = new MySqlConnection(connectionString);
         }
-        public MySqlCommand INSERT(string sql, JObject data)
+        public bool INSERT(string sql, JObject data)
         {
             try
             {
@@ -32,18 +32,19 @@ namespace doanC
                 }
                 cmd.ExecuteNonQuery();
                 this.Close();
-                return cmd;
+                return true;
             }
             catch (Exception e)
             {
-                return null;
+                return false;
             }
 
 
         }
         public JArray SELECT(string sql, string[] name)
         {
-            try {
+            try
+            {
                 JArray array = new JArray();
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 this.Open();
@@ -67,10 +68,11 @@ namespace doanC
 
 
         }
-        public JObject WHERE(string sql, string[] name, JObject value)
+        public JArray WHERE(string sql, string[] name, JObject value)
         {
-            try{
-                JObject obj = new JObject();
+            try
+            {
+                JArray array = new JArray();
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 foreach (var item in value)
                 {
@@ -80,20 +82,23 @@ namespace doanC
                 MySqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
+                    JObject obj = new JObject();
+
                     foreach (string i in name)
                     {
                         obj[i] = reader[i].ToString();
                     }
+                    array.Add(obj);
                 }
                 this.Close();
-                return obj;
+                return array;
             }
             catch (Exception e)
             {
                 return null;
             }
 
-            
+
         }
         public void Open()
         {

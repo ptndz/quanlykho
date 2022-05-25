@@ -79,3 +79,4 @@ D:\code\AppCs\doanC\doanC\obj\Debug\doanC.Screen.Donvido.resources
 D:\code\AppCs\doanC\doanC\bin\Debug\Newtonsoft.Json.dll
 D:\code\AppCs\doanC\doanC\bin\Debug\Newtonsoft.Json.xml
 D:\code\AppCs\doanC\doanC\obj\Debug\doanC.Screen.Nhacungcap.resources
+D:\code\AppCs\doanC\doanC\obj\Debug\doanC.Screen.Khachhang.resources
