@@ -1,6 +1,10 @@
 ﻿using Newtonsoft.Json.Linq;
 using System;
+using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms;
+
 namespace WindowsFormsApp3.Class
 {
     internal class ClassSQL
@@ -15,14 +19,20 @@ namespace WindowsFormsApp3.Class
         {
             conn = new SqlConnection(connectionString);
         }
-        public void Open()
+        public SqlConnection connection()
+        {
+            this.OpenConn();
+            return conn;
+        }
+        public void OpenConn()
         {
             if (conn.State == System.Data.ConnectionState.Closed)
             {
                 conn.Open();
             }
+
         }
-        public void Close()
+        public void CloseConn()
         {
             if (conn.State == System.Data.ConnectionState.Open)
             {
@@ -33,29 +43,61 @@ namespace WindowsFormsApp3.Class
         {
             try
             {
-                this.Open();
+
                 int newID;
-                SqlCommand cmd = new SqlCommand(sql + ";SELECT CAST(scope_identity() AS int)", conn);
+                SqlCommand cmd = new SqlCommand(sql + "SELECT CAST(scope_identity() AS int)", conn);
+
                 foreach (var item in data)
                 {
-                    cmd.Parameters.AddWithValue("@" + item.Key, item.Value);
+                    cmd.Parameters.AddWithValue("@" + item.Key.ToString(), item.Value.ToString());
                 }
+
+                this.OpenConn();
+
                 newID = (int)cmd.ExecuteScalar();
-                this.Close();
+
+                this.CloseConn();
                 return newID;
 
             }
             catch (Exception ex)
             {
-                this.Close();
+                this.CloseConn();
                 return -1;
+            }
+        }
+        public bool QUERY(string sql, JObject data)
+        {
+            try
+            {
+
+                int newID;
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                foreach (var item in data)
+                {
+                    cmd.Parameters.AddWithValue("@" + item.Key.ToString(), item.Value.ToString());
+                }
+
+                this.OpenConn();
+
+                cmd.ExecuteNonQuery();
+
+                this.CloseConn();
+                return true;
+
+            }
+            catch (Exception ex)
+            {
+                this.CloseConn();
+                return false;
             }
         }
         public JArray GET(string sql, string[] name)
         {
             try
             {
-                this.Open();
+                this.OpenConn();
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 SqlDataReader reader = cmd.ExecuteReader();
                 JArray data = new JArray();
@@ -69,12 +111,12 @@ namespace WindowsFormsApp3.Class
                     data.Add(obj);
                 }
                 reader.Close();
-                this.Close();
+                this.CloseConn();
                 return data;
             }
             catch (Exception ex)
             {
-                this.Close();
+                this.CloseConn();
                 return null;
             }
         }
@@ -86,9 +128,9 @@ namespace WindowsFormsApp3.Class
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 foreach (var item in value)
                 {
-                    cmd.Parameters.AddWithValue("@" + item.Key, item.Value);
+                    cmd.Parameters.AddWithValue("@" + item.Key.ToString(), item.Value.ToString());
                 }
-                this.Open();
+                this.OpenConn();
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
@@ -99,13 +141,13 @@ namespace WindowsFormsApp3.Class
                     }
                     array.Add(obj);
                 }
-                this.Close();
+                this.CloseConn();
                 return array;
 
             }
             catch (Exception ex)
             {
-                this.Close();
+                this.CloseConn();
                 return null;
             }
         }
@@ -137,7 +179,7 @@ namespace WindowsFormsApp3.Class
                 return null;
             }
         }
-        public JObject UpdateById(string table, int id, JObject value)
+        public bool UpdateById(string table, int id, JObject value)
         {
             try
             {
@@ -149,21 +191,22 @@ namespace WindowsFormsApp3.Class
                 sql = sql.Substring(0, sql.Length - 2);
                 sql += " WHERE id" + table + " = @id";
                 value["id"] = id;
-                return this.ADD(sql, value) > 0 ? value : null;
+                return this.QUERY(sql, value);
             }
             catch (Exception ex)
             {
-                return null;
+                return false;
             }
         }
         public bool DeleteById(string table, int id)
         {
             try
             {
-                string sql = "DELETE FROM " + table + " WHERE id" + table + " = @id";
+                string sql = "DELETE FROM " + table + " WHERE Id" + table + "=@id";
                 JObject value = new JObject();
                 value["id"] = id;
-                return this.ADD(sql, value) > 0;
+
+                return this.QUERY(sql, value);
             }
             catch (Exception ex)
             {
@@ -174,7 +217,7 @@ namespace WindowsFormsApp3.Class
         {
             try
             {
-                string sql = "SELECT * FROM " + table + " WHERE id" + table + " = @id";
+                string sql = "SELECT * FROM " + table + " WHERE Id" + table + " = @id";
                 JObject value = new JObject();
                 string idTable = "id" + table;
                 value[idTable] = id;
@@ -186,6 +229,33 @@ namespace WindowsFormsApp3.Class
                 return false;
             }
         }
+        public BindingSource ArryToList(JArray data)
+        {
+            List<JObject> list = new List<JObject>();
+            foreach (var item in data)
+            {
+                list.Add((JObject)item);
+            }
+            BindingSource bindingSource = new BindingSource();
+            bindingSource.DataSource = list;
+            return bindingSource;
+        }
+        public DataTable Report(string table)
+        {
+            try
+            {
+                string sql = "SELECT * FROM " + table;
 
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, conn);
+                this.OpenConn();
+                DataTable dataTable = new DataTable();
+                adapter.Fill(dataTable);
+                return dataTable;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
     }
 }

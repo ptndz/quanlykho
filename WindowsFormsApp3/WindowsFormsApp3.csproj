@@ -33,11 +33,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -54,6 +60,80 @@
     <Compile Include="Class\ClassSQL.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report\CrystalReport1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\CrystalReport2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport2.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\CrystalReportKHang.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportKHang.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\CrystalReportVattu.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportVattu.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\DKHang.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DKHang.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\DNCC.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DNCC.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\DVattu.cs">
+      <DependentUpon>DVattu.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\DVattu.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DVattu.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\FKHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\FKHang.Designer.cs">
+      <DependentUpon>FKHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\FVattu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\FVattu.Designer.cs">
+      <DependentUpon>FVattu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\ReportUnit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\ReportUnit.Designer.cs">
+      <DependentUpon>ReportUnit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\RNCC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\RNCC.Designer.cs">
+      <DependentUpon>RNCC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Unit.cs">
+      <DependentUpon>Unit.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Unit.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Unit.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Screen\Donvido.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +170,13 @@
     <Compile Include="Screen\Nhapkho.Designer.cs">
       <DependentUpon>Nhapkho.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screen\sizeDGV.cs" />
+    <Compile Include="Screen\VatTu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screen\VatTu.Designer.cs">
+      <DependentUpon>VatTu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screen\Xuatkho.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,14 +192,51 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Report\CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CrystalReport2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport2.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CrystalReportKHang.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportKHang.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CrystalReportVattu.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportVattu.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\FKHang.resx">
+      <DependentUpon>FKHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\FVattu.resx">
+      <DependentUpon>FVattu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\ReportUnit.resx">
+      <DependentUpon>ReportUnit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\RNCC.resx">
+      <DependentUpon>RNCC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Screen\Donvido.resx">
       <DependentUpon>Donvido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screen\Khachhang.resx">
+      <DependentUpon>Khachhang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screen\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screen\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screen\Nhacungcap.resx">
+      <DependentUpon>Nhacungcap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screen\VatTu.resx">
+      <DependentUpon>VatTu.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -124,12 +248,56 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Report\DKHang.xsc">
+      <DependentUpon>DKHang.xsd</DependentUpon>
+    </None>
+    <None Include="Report\DKHang.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DKHang.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Report\DKHang.xss">
+      <DependentUpon>DKHang.xsd</DependentUpon>
+    </None>
+    <None Include="Report\DNCC.xsc">
+      <DependentUpon>DNCC.xsd</DependentUpon>
+    </None>
+    <None Include="Report\DNCC.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DNCC.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Report\DNCC.xss">
+      <DependentUpon>DNCC.xsd</DependentUpon>
+    </None>
+    <None Include="Report\DVattu.xsc">
+      <DependentUpon>DVattu.xsd</DependentUpon>
+    </None>
+    <None Include="Report\DVattu.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DVattu.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Report\DVattu.xss">
+      <DependentUpon>DVattu.xsd</DependentUpon>
+    </None>
+    <None Include="Report\Unit.xsc">
+      <DependentUpon>Unit.xsd</DependentUpon>
+    </None>
+    <None Include="Report\Unit.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Unit.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Report\Unit.xss">
+      <DependentUpon>Unit.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Report\" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

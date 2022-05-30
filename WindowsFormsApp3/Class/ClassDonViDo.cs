@@ -1,20 +1,22 @@
 ﻿using Newtonsoft.Json.Linq;
 using System;
+using System.Windows.Forms;
+
 namespace WindowsFormsApp3.Class
 {
     internal class ClassDonViDo : ClassSQL
     {
-        
         public bool AddName(string name)
         {
             try
             {
-                string sql = "INSERT INTO Unit(DisplayNameUnit) VALUES('@DisplayNameUnit')";
+                string sql = "INSERT INTO Unit (DisplayNameUnit) VALUES (@DisplayNameUnit);";
                 JObject obj = new JObject();
                 obj["DisplayNameUnit"] = name;
                 int id = this.ADD(sql, obj);
                 if (id > 0)
                 {
+                    MessageBox.Show("" + id);
                     return true;
                 }
                 else
@@ -32,19 +34,11 @@ namespace WindowsFormsApp3.Class
         {
             try
             {
-                string sql = "UPDATE Unit SET DisplayNameUnit = '@DisplayNameUnit' WHERE IdUnit = '@IdUnit'";
+                string sql = "UPDATE Unit SET DisplayNameUnit=@DisplayNameUnit WHERE IdUnit=@IdUnit";
                 JObject obj = new JObject();
                 obj["DisplayNameUnit"] = name;
                 obj["IdUnit"] = id;
-                int id1 = this.ADD(sql, obj);
-                if (id1 > 0)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+                return this.QUERY(sql, obj);
             }
             catch (Exception ex)
             {
@@ -64,11 +58,11 @@ namespace WindowsFormsApp3.Class
                 return false;
             }
         }
-        public JArray GetAll()
+        public BindingSource GetAll()
         {
             try
             {
-                return this.GetTable("Unit", new string[] { "IdUnit", "DisplayNameUnit"});
+                return ArryToList(this.GetTable("Unit", new string[] { "IdUnit", "DisplayNameUnit" }));
             }
             catch (Exception ex)
             {
@@ -76,5 +70,6 @@ namespace WindowsFormsApp3.Class
                 return null;
             }
         }
+
     }
 }

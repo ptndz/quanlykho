@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DVattu" targetNamespace="http://tempuri.org/DVattu.xsd" xmlns:mstns="http://tempuri.org/DVattu.xsd" xmlns="http://tempuri.org/DVattu.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DVattu" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="DVattu" msprop:Generator_DataSetName="DVattu">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Object" msprop:Generator_RowEvHandlerName="ObjectRowChangeEventHandler" msprop:Generator_RowDeletedName="ObjectRowDeleted" msprop:Generator_RowDeletingName="ObjectRowDeleting" msprop:Generator_RowEvArgName="ObjectRowChangeEvent" msprop:Generator_TablePropName="Object" msprop:Generator_RowChangedName="ObjectRowChanged" msprop:Generator_RowChangingName="ObjectRowChanging" msprop:Generator_TableClassName="ObjectDataTable" msprop:Generator_RowClassName="ObjectRow" msprop:Generator_TableVarName="tableObject" msprop:Generator_UserTableName="Object">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdObject" msprop:Generator_ColumnPropNameInRow="IdObject" msprop:Generator_ColumnPropNameInTable="IdObjectColumn" msprop:Generator_ColumnVarNameInTable="columnIdObject" msprop:Generator_UserColumnName="IdObject" type="xs:string" minOccurs="0" />
+              <xs:element name="DisplayName" msprop:Generator_ColumnPropNameInRow="DisplayName" msprop:Generator_ColumnPropNameInTable="DisplayNameColumn" msprop:Generator_ColumnVarNameInTable="columnDisplayName" msprop:Generator_UserColumnName="DisplayName" type="xs:string" minOccurs="0" />
+              <xs:element name="IdUnit" msprop:Generator_ColumnPropNameInRow="IdUnit" msprop:Generator_ColumnPropNameInTable="IdUnitColumn" msprop:Generator_ColumnVarNameInTable="columnIdUnit" msprop:Generator_UserColumnName="IdUnit" type="xs:string" minOccurs="0" />
+              <xs:element name="IdSuplier" msprop:Generator_ColumnPropNameInRow="IdSuplier" msprop:Generator_ColumnPropNameInTable="IdSuplierColumn" msprop:Generator_ColumnVarNameInTable="columnIdSuplier" msprop:Generator_UserColumnName="IdSuplier" type="xs:string" minOccurs="0" />
+              <xs:element name="QRCode" msprop:Generator_ColumnPropNameInRow="QRCode" msprop:Generator_ColumnPropNameInTable="QRCodeColumn" msprop:Generator_ColumnVarNameInTable="columnQRCode" msprop:Generator_UserColumnName="QRCode" type="xs:string" minOccurs="0" />
+              <xs:element name="BarCode" msprop:Generator_ColumnPropNameInRow="BarCode" msprop:Generator_ColumnPropNameInTable="BarCodeColumn" msprop:Generator_ColumnVarNameInTable="columnBarCode" msprop:Generator_UserColumnName="BarCode" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

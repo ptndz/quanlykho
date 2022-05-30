@@ -77,5 +77,18 @@ namespace WindowsFormsApp3.Screen
                 Console.WriteLine(ex);
             }
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                VatTu vatTu = new VatTu();
+                vatTu.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+        }
     }
 }

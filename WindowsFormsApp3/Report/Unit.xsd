@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Unit" targetNamespace="http://tempuri.org/Unit.xsd" xmlns:mstns="http://tempuri.org/Unit.xsd" xmlns="http://tempuri.org/Unit.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Unit" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="Unit" msprop:Generator_DataSetName="Unit">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Unit" msprop:Generator_RowEvHandlerName="UnitRowChangeEventHandler" msprop:Generator_RowDeletedName="UnitRowDeleted" msprop:Generator_RowDeletingName="UnitRowDeleting" msprop:Generator_RowEvArgName="UnitRowChangeEvent" msprop:Generator_TablePropName="_Unit" msprop:Generator_RowChangedName="UnitRowChanged" msprop:Generator_RowChangingName="UnitRowChanging" msprop:Generator_TableClassName="UnitDataTable" msprop:Generator_RowClassName="UnitRow" msprop:Generator_TableVarName="tableUnit" msprop:Generator_UserTableName="Unit">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdUnit" msprop:Generator_ColumnPropNameInRow="IdUnit" msprop:Generator_ColumnPropNameInTable="IdUnitColumn" msprop:Generator_ColumnVarNameInTable="columnIdUnit" msprop:Generator_UserColumnName="IdUnit" type="xs:string" minOccurs="0" />
+              <xs:element name="DisplayNameUnit" msprop:Generator_ColumnPropNameInRow="DisplayNameUnit" msprop:Generator_ColumnPropNameInTable="DisplayNameUnitColumn" msprop:Generator_ColumnVarNameInTable="columnDisplayNameUnit" msprop:Generator_UserColumnName="DisplayNameUnit" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
