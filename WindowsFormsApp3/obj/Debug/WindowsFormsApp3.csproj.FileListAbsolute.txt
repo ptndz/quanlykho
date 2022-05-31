@@ -37,3 +37,4 @@ D:\code\AppCs\WindowsFormsApp3\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.Repor
 D:\code\AppCs\WindowsFormsApp3\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.Report.FKHang.resources
 D:\code\AppCs\WindowsFormsApp3\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.Screen.VatTu.resources
 D:\code\AppCs\WindowsFormsApp3\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.Report.FVattu.resources
+D:\code\AppCs\WindowsFormsApp3\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.Screen.Nhapkho.resources

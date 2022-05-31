@@ -61,7 +61,7 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(410, 39);
+            this.button3.Location = new System.Drawing.Point(425, 39);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(119, 44);
             this.button3.TabIndex = 2;
@@ -72,9 +72,9 @@
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(550, 39);
+            this.button4.Location = new System.Drawing.Point(565, 39);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(119, 44);
+            this.button4.Size = new System.Drawing.Size(153, 44);
             this.button4.TabIndex = 3;
             this.button4.Text = "Khách hàng ";
             this.button4.UseVisualStyleBackColor = true;
@@ -83,9 +83,9 @@
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(686, 39);
+            this.button5.Location = new System.Drawing.Point(735, 39);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(119, 44);
+            this.button5.Size = new System.Drawing.Size(154, 44);
             this.button5.TabIndex = 4;
             this.button5.Text = "Nhà cung cấp";
             this.button5.UseVisualStyleBackColor = true;
@@ -106,7 +106,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(861, 450);
+            this.ClientSize = new System.Drawing.Size(918, 450);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);

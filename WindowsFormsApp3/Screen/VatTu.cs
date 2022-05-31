@@ -205,5 +205,10 @@ namespace WindowsFormsApp3.Screen
             FVattu f = new FVattu();
             f.ShowDialog();
         }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+       
+        }
     }
 }

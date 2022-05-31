@@ -235,6 +235,9 @@
     <EmbeddedResource Include="Screen\Nhacungcap.resx">
       <DependentUpon>Nhacungcap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Screen\Nhapkho.resx">
+      <DependentUpon>Nhapkho.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Screen\VatTu.resx">
       <DependentUpon>VatTu.cs</DependentUpon>
     </EmbeddedResource>
