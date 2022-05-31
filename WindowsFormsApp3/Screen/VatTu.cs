@@ -96,7 +96,7 @@ namespace WindowsFormsApp3.Screen
             comboBox2.SelectedText = "--Nhà cung cấp--";
             dataUnit = ClassIndex.SQL.GetTable("Unit", new string[] { "IdUnit", "DisplayNameUnit" });
             dataSuplier = ClassIndex.SQL.GetTable("Suplier", new string[] { "IdSuplier", "DisplayNameSuplier" });
-            
+
             foreach (var item in dataUnit)
             {
                 comboBox1.Items.Add(item["DisplayNameUnit"]);
@@ -208,7 +208,7 @@ namespace WindowsFormsApp3.Screen
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-       
+
         }
     }
 }

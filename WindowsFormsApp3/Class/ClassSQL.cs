@@ -189,7 +189,7 @@ namespace WindowsFormsApp3.Class
                     sql += item.Key + " = @" + item.Key + ", ";
                 }
                 sql = sql.Substring(0, sql.Length - 2);
-                sql += " WHERE id" + table + " = @id";
+                sql += " WHERE id" + table + " = @id;";
                 value["id"] = id;
                 return this.QUERY(sql, value);
             }
