@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Windows.Forms;
 
 namespace WindowsFormsApp3.Class
@@ -17,7 +18,18 @@ namespace WindowsFormsApp3.Class
         protected SqlConnection conn;
         public ClassSQL()
         {
-            conn = new SqlConnection(connectionString);
+
+            string connectionString2 = Laychuoiketnoi();
+            conn = new SqlConnection(connectionString2);
+        }
+        public string Laychuoiketnoi()
+        {
+            string tentaptin = "Chuoi.txt";
+            string s;
+            StreamReader sr = new StreamReader(tentaptin);
+            s = sr.ReadToEnd();
+            sr.Close();
+            return s;
         }
         public SqlConnection connection()
         {

@@ -57,6 +57,7 @@
             this.button3.TabIndex = 29;
             this.button3.Text = "Xoá";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -78,6 +79,7 @@
             this.button1.TabIndex = 27;
             this.button1.Text = "Report";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -234,6 +236,7 @@
             this.Name = "Nhapkho";
             this.Text = "Nhapkho";
             this.Load += new System.EventHandler(this.Nhapkho_Load);
+            this.Click += new System.EventHandler(this.Nhapkho_Click);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

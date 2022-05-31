@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Windows.Forms;
+using WindowsFormsApp3.Class;
 
 namespace WindowsFormsApp3.Screen
 {
@@ -9,7 +11,9 @@ namespace WindowsFormsApp3.Screen
         {
             InitializeComponent();
         }
-
+        int soluongcon;
+        int danhapvao;
+        int daxuatdi;
         private void button1_Click(object sender, EventArgs e)
         {
             try
@@ -89,6 +93,30 @@ namespace WindowsFormsApp3.Screen
             {
                 Console.WriteLine(ex);
             }
+        }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+            LoadData();
+
+        }
+        void LoadData()
+        {
+            JArray arryOutputInfo = ClassIndex.SQL.GetTable("OutputInfo", new string[] { "Count" });
+            JArray dataInputInfo = ClassIndex.SQL.GetTable("InputInfo", new string[] { "Count" });
+            foreach (var item in arryOutputInfo)
+            {
+                daxuatdi += int.Parse(item["Count"].ToString());
+            }
+            foreach (var item in dataInputInfo)
+            {
+                danhapvao += int.Parse(item["Count"].ToString());
+            }
+            soluongcon = danhapvao - daxuatdi;
+            conkho.Text = soluongcon.ToString();
+            xuatkho.Text = daxuatdi.ToString();
+            nhapkho.Text = danhapvao.ToString();
+
         }
     }
 }

@@ -78,11 +78,39 @@
       <DependentUpon>CrystalReportKHang.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Report\CrystalReportNhapKho.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportNhapKho.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Report\CrystalReportVattu.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CrystalReportVattu.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\CrystalReportXuatkho.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportXuatkho.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\DataSet1.cs">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\DataSet2.cs">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\DataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet2.xsd</DependentUpon>
     </Compile>
     <Compile Include="Report\DKHang.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -108,11 +136,23 @@
     <Compile Include="Report\FKHang.Designer.cs">
       <DependentUpon>FKHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report\FNhapkho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\FNhapkho.Designer.cs">
+      <DependentUpon>FNhapkho.cs</DependentUpon>
+    </Compile>
     <Compile Include="Report\FVattu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Report\FVattu.Designer.cs">
       <DependentUpon>FVattu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\FXuatkho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\FXuatkho.Designer.cs">
+      <DependentUpon>FXuatkho.cs</DependentUpon>
     </Compile>
     <Compile Include="Report\ReportUnit.cs">
       <SubType>Form</SubType>
@@ -204,15 +244,29 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReportKHang.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report\CrystalReportNhapKho.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportNhapKho.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\CrystalReportVattu.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReportVattu.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report\CrystalReportXuatkho.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportXuatkho.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\FKHang.resx">
       <DependentUpon>FKHang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report\FNhapkho.resx">
+      <DependentUpon>FNhapkho.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\FVattu.resx">
       <DependentUpon>FVattu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\FXuatkho.resx">
+      <DependentUpon>FXuatkho.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\ReportUnit.resx">
       <DependentUpon>ReportUnit.cs</DependentUpon>
@@ -241,6 +295,9 @@
     <EmbeddedResource Include="Screen\VatTu.resx">
       <DependentUpon>VatTu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Screen\Xuatkho.resx">
+      <DependentUpon>Xuatkho.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -251,6 +308,28 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Report\DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Report\DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Report\DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Report\DataSet2.xsc">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="Report\DataSet2.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet2.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Report\DataSet2.xss">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </None>
     <None Include="Report\DKHang.xsc">
       <DependentUpon>DKHang.xsd</DependentUpon>
     </None>

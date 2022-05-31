@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using CrystalDecisions.CrystalReports.Engine;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Data;
 using System.Windows.Forms;
@@ -97,6 +98,12 @@ namespace WindowsFormsApp3.Report
             CrystalReportVattu reportVattu = new CrystalReportVattu();
 
             reportVattu.SetDataSource(table);
+
+            int length = dataUnit.Count;
+
+            TextObject txt;
+            txt = (TextObject)reportVattu.ReportDefinition.ReportObjects["Text1"];
+            txt.Text = "Tổng số lượng vật tư: " + length;
             crystalReportViewer1.ReportSource = reportVattu;
         }
     }

@@ -131,6 +131,7 @@ namespace WindowsFormsApp3.Screen
                     {
 
                         obj["IdUnit"] = itemUnit["DisplayNameUnit"];
+
                     }
                 }
                 foreach (var itemSuplier in dataSuplier)
@@ -138,6 +139,7 @@ namespace WindowsFormsApp3.Screen
                     if (item["IdSuplier"].ToString() == itemSuplier["IdSuplier"].ToString())
                     {
                         obj["IdSuplier"] = itemSuplier["DisplayNameSuplier"];
+
                     }
                 }
                 obj["QRCode"] = item["QRCode"];
